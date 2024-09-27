@@ -16,8 +16,6 @@ import CommentList from "./Components/pages/Blog/CommentList";
 import AppSubmitted from "./Components/pages/BookingPage/AppSubmitted";
 import AppointmentDisplay from "./Components/pages/AppointmentDisplay/AppointmentDisplay";
 import AppointmentList from "./Components/pages/AppointmentDisplay/AppointmentList";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 
 function App() {
   return (
@@ -59,9 +57,9 @@ function App() {
             <Route exact path="/AppSubmitted">
               <AppSubmitted />
             </Route>
-            <Route exact path="/AppointmentDisplay" >
+            <Route exact path="/AppointmentDisplay">
               <AppointmentDisplay />
-              <Route/>
+              <Route />
               <Route path="/appointments/:appointment_id">
                 <AppointmentList />
               </Route>

@@ -1,0 +1,28 @@
+.deleteButton {
+  background-color: #4a413e; /* Green */
+  border: 1px solid rgb(33, 32, 32);
+  color: white;
+  padding: 1px 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+.updateButton {
+  background-color: #576b57; /* Green */
+  border: 1px solid rgb(32, 31, 31);
+  color: white;
+  padding: 1px 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+.breeds {
+  font-size: 500px;
+}
+.breed_list {
+  margin: auto;
+  width: 50%;
+  padding: 100px;
+}

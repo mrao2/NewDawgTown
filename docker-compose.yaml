@@ -11,10 +11,10 @@ services:
     build:
       context: ./backend
     environment:
-      - User=newtowndogs
+      - User=${User}
       - Host=db
-      - Password=admin
-      - Database=newtowndogs
+      - Password=${Password}
+      - Database=${Database}
     ports:
       - "4002:3001"
     depends_on:
@@ -25,10 +25,10 @@ services:
   db:
     image: mariadb
     environment:
-      MYSQL_ROOT_PASSWORD: admin
-      MYSQL_DATABASE: newtowndogs
-      MYSQL_USER: newtowndogs
-      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: Password
+      MYSQL_DATABASE: Database
+      MYSQL_USER: User
+      MYSQL_PASSWORD: Password
     volumes:
       - db_data:/var/lib/mysql
       - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql

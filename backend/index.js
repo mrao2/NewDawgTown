@@ -48,6 +48,44 @@ app.get("/api/home", async (req, res) => {
   await read(req, res, "SELECT * FROM homepage");
 });
 
+app.delete("/api/breeds/:breedid", async (req, res, next) => {
+  try {
+    const { breedid } = req.params;
+    await deleteRow(
+      req,
+      res,
+      "DELETE FROM homepage WHERE breedid = ?",
+      breedid
+    );
+  } catch (err) {
+    next(err);
+  }
+});
+
+app.post("/api/home", async (req, res, next) => {
+  try {
+    await create(req, res, "INSERT INTO homepage SET ?");
+  } catch (err) {
+    next(err);
+  }
+});
+
+app.put("/api/breeds/:breedid", async (req, res, next) => {
+  try {
+    const { breedid } = req.params;
+    const breed = req.body.breed;
+    await update(
+      req,
+      res,
+      "UPDATE homepage SET breed = ? WHERE breedid = ?",
+      breedid,
+      breed
+    );
+  } catch (err) {
+    next(err);
+  }
+});
+
 //appointment functions
 app.post("/api/appointments", async (req, res) => {
   await create(req, res, "INSERT INTO appointments SET ?");
